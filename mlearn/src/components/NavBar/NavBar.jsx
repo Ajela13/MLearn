@@ -1,6 +1,9 @@
 import "./NavBar.css";
+import { useTextColor } from "../../contexts/TextColorContext";
 
 function NavBar() {
+  const textColor = useTextColor();
+
   return (
     <div className="navbar">
       <ul className="navbar__links">
@@ -8,7 +11,9 @@ function NavBar() {
         <li className="navbar__link">Profile</li>
       </ul>
       <div className="navbar__auth">
-        <button className="navbar__SignIn">Sign in</button>
+        <button className="navbar__SignIn" style={{ borderColor: textColor }}>
+          Sign in
+        </button>
       </div>
     </div>
   );
