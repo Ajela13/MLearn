@@ -5,7 +5,8 @@
   height: 100vh;
   background-color: #ffffff;
   color: black;
-  padding: 20px;
+  margin: auto;
+  padding: 105px;
 }
 
 .about__content {
@@ -14,7 +15,7 @@
   justify-content: center;
   align-self: flex-start;
   max-width: 100%;
-  margin: 131px 216px 0 56px;
+  margin: 131px 110px 0 56px;
 }
 
 .about__image {
