@@ -1,7 +1,7 @@
 import "./PostCard.css";
 import photo from "../../assets/background.png";
 
-function ItemCard() {
+function PostCard() {
   return (
     <li className="card">
       <div className="card__header">
@@ -28,4 +28,4 @@ function ItemCard() {
   );
 }
 
-export default ItemCard;
+export default PostCard;
