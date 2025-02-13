@@ -1,0 +1,70 @@
+.main {
+  background: url("../../assets/background.png") center/cover no-repeat fixed;
+  font-family: "NotoSans", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.main__content {
+  max-width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.main__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+  line-height: 1.2;
+  margin-top: 70px;
+}
+
+.main__subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-top: 16px;
+}
+
+.main__results {
+  background-color: #e4e4e4;
+  padding: 40px 0;
+  color: black;
+  font-family: "NotoSans", sans-serif;
+}
+
+.main__results-title {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 0px 0 32px 40px;
+}
+
+.main__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 325px);
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 20px;
+  justify-content: center;
+}
+
+.main__show-btn {
+  width: 288px;
+  height: 60px;
+  border-radius: 80px;
+  background-color: #aaaaaa;
+  border: transparent;
+  margin: 60px auto 80px;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  align-items: center;
+  justify-content: center;
+}
