@@ -1,0 +1,46 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.navbar__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  font-family: inherit;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.navbar__auth {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.navbar__SignIn {
+  font-family: inherit;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 10px 40px;
+  list-style: none;
+  background: transparent;
+  border-radius: 100px;
+  border: 1px solid white;
+}
