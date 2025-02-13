@@ -3,6 +3,7 @@
   font-family: "NotoSans", sans-serif;
   color: #fff;
   overflow-x: hidden;
+  font-family: "NotoSans", sans-serif;
 }
 
 .main__content {
@@ -34,14 +35,13 @@
   background-color: #e4e4e4;
   padding: 40px 0;
   color: black;
-  font-family: "NotoSans", sans-serif;
 }
 
 .main__results-title {
   font-size: 30px;
   line-height: 1.2;
   font-weight: 400;
-  margin: 0px 0 32px 40px;
+  margin: 0px 0 32px 105px;
 }
 
 .main__list {
