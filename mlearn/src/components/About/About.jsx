@@ -1,5 +1,5 @@
 import "./About.css";
-import logo from "../../assets/mlearnLogo.svg";
+import logo from "../../assets/mlearnLogo.jpeg";
 function About() {
   return (
     <section className="about">

@@ -19,10 +19,10 @@
 }
 
 .about__image {
-  width: 464px;
-  height: 464px;
+  width: 484px;
+  height: 484px;
   background-color: black;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
 .about__title {
