@@ -1,5 +1,3 @@
-import "./LoginModal.css";
-
 import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useContext } from "react";
@@ -28,17 +26,17 @@ function LoginModal({ isOpen }) {
     }
   }, [isOpen]);
 
-  //  const handleSubmit = (e) => {
-  //    e.preventDefault();
-  //    handleLoginSubmit(data);
-  //  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // handleLoginSubmit(data);
+  };
 
   return (
     <ModalWithForm
       title="Log in"
       buttonText="Log in"
       isOpen={isOpen}
-      //   onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
       redirectText="or Sign Up"
       clickHandler={handleRegisterClick}
     >
