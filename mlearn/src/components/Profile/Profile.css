@@ -43,6 +43,7 @@
   align-items: center;
   justify-content: center;
   color: #ffff;
+  cursor: pointer;
 }
 
 .profile__results {
