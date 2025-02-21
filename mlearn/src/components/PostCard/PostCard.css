@@ -1,13 +1,14 @@
 .card {
   background-color: #ffffff;
   border-radius: 20px;
-  max-width: 323px;
+  max-width: 400px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 576px;
-  height: 450px;
+  width: 400px;
+  height: 328px;
+  cursor: pointer;
 }
 
 .card__image {
@@ -53,9 +54,9 @@
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 110px;
+  max-height: 160px;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 9;
   -webkit-box-orient: vertical;
 }
 
