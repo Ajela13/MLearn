@@ -1,3 +1,7 @@
+.header {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .header__content {
   display: flex;
   flex-direction: row;
@@ -18,10 +22,17 @@
   width: 100px;
   height: 100px;
   align-items: center;
+  border-radius: 50%;
 }
 
 .header__title {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
+  text-decoration: none;
+}
+
+.header__link_no-style-link {
+  text-decoration: none;
+  color: inherit;
 }
