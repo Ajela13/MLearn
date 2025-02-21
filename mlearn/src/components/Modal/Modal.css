@@ -19,6 +19,7 @@
 }
 
 .modal__container {
-  max-width: 610px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
