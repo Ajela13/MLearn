@@ -8,7 +8,8 @@ import Profile from "../Profile/Profile";
 import AddPostModal from "../AddPostModal/AddPostModal";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
-import DataSets from "../DataSets/DataSets";
+import Tasks from "../Tasks/Tasks.jsx";
+
 import { ModalContext } from "../../contexts/ModalContext.jsx";
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/datasets" element={<DataSets />} />
+          <Route path="/tasks" element={<Tasks />} />
         </Routes>
         <Footer />
       </div>
