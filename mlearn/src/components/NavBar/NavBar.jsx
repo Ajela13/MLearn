@@ -1,15 +1,25 @@
 import "./NavBar.css";
-import { useContext } from "react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react"; // Icons
 import { Link } from "react-router-dom";
-import { useTextColor } from "../../contexts/TextColorContext";
-import { ModalContext } from "../../contexts/ModalContext";
+import { useTextColorStore } from "../../Store/UseTextColorStore";
+import { useModalStore } from "../../Store/UseModalStore";
 
 function NavBar() {
-  const textColor = useTextColor();
-  const { handleAddClick, handleLoginClick } = useContext(ModalContext);
+  const { textColor } = useTextColorStore();
+  const { handleAddClick, handleLoginClick } = useModalStore();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="navbar">
-      <ul className="navbar__links">
+    <nav className="navbar">
+      <button
+        className="navbar__menu-button"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <X size={30} /> : <Menu size={30} />}
+      </button>
+
+      <ul className={`navbar__links ${menuOpen ? "navbar__open" : ""}`}>
         <li className="navbar__link" onClick={handleAddClick}>
           Add post
         </li>
@@ -19,17 +29,17 @@ function NavBar() {
         <Link to="/tasks" className="navbar__link-no-style-link">
           <li className="navbar__link">Tasks</li>
         </Link>
+        <div className="navbar__auth">
+          <button
+            className="navbar__SignIn"
+            style={{ borderColor: textColor }}
+            onClick={handleLoginClick}
+          >
+            Sign in
+          </button>
+        </div>
       </ul>
-      <div className="navbar__auth">
-        <button
-          className="navbar__SignIn"
-          style={{ borderColor: textColor }}
-          onClick={handleLoginClick}
-        >
-          Sign in
-        </button>
-      </div>
-    </div>
+    </nav>
   );
 }
 
