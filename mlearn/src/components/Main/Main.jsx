@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
-import PostCard from "../PostCard/PostCard";
+import PostList from "../PostList/PostList";
 import About from "../About/About";
 import "./Main.css";
 
@@ -17,9 +17,7 @@ function Main() {
         <SearchForm />
         <div className="main__results">
           <h2 className="main__results-title">Search results</h2>
-          <ul className="main__list">
-            <PostCard />
-          </ul>
+          <PostList />
           <button className="main__show-btn">Show more</button>
         </div>
         <About />
