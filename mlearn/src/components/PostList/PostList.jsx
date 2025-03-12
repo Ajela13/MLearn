@@ -13,7 +13,9 @@ function PostList() {
           ))}
         </div>
       ) : (
-        <p>No posts available</p>
+        <p className="postList__empty">
+          Looks like there's nothing here yet. Be the first to add a post!
+        </p>
       )}
     </div>
   );
