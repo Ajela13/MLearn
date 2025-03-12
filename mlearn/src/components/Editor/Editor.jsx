@@ -6,11 +6,11 @@ import Image from "@tiptap/extension-image";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
-import { usePost } from "../../contexts/PostContext";
+import { usePostStore } from "../../Store/UsePostStore";
 import { useEffect } from "react";
 
 const MenuBar = ({ isOpen }) => {
-  const { postData, setPostData } = usePost();
+  const { currentPost, setCurrentPost } = usePostStore();
 
   const { editor } = useCurrentEditor();
 
@@ -31,19 +31,16 @@ const MenuBar = ({ isOpen }) => {
 
   useEffect(() => {
     if (isOpen) {
-      editor.commands.setContent(postData.post);
+      editor.commands.setContent(currentPost.post);
     }
-  }, [isOpen, postData.post, editor]);
+  }, [isOpen, currentPost.post, editor]);
 
   if (!editor) {
     return null;
   }
 
   editor.on("update", () => {
-    setPostData((prevData) => ({
-      ...prevData,
-      post: editor.getHTML(),
-    }));
+    setCurrentPost({ post: editor.getHTML() });
   });
 
   return (
@@ -257,12 +254,12 @@ const extensions = [
 ];
 
 export default () => {
-  const { postData } = usePost();
+  const { currentPost } = usePostStore();
   return (
     <EditorProvider
       slotBefore={<MenuBar />}
       extensions={extensions}
-      content={postData.post}
+      content={currentPost.post}
     >
       <div className="editor__container"></div>
     </EditorProvider>
