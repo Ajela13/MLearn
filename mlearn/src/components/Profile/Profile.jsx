@@ -17,6 +17,7 @@ function Profile() {
         </div>
         <div className="profile__results">
           <PostList />
+          <button className="profile__show-btn">Show more</button>{" "}
         </div>
       </div>
     </section>

@@ -52,6 +52,21 @@
   padding: 40px 0;
   color: black;
 }
+.profile__show-btn {
+  width: 288px;
+  height: 60px;
+  border-radius: 80px;
+  background-color: #aaaaaa;
+  border: transparent;
+  margin: 60px auto 80px;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 
 @media (max-width: 650px) {
   .profile__title {
@@ -66,5 +81,9 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+  .profile__show-btn {
+    width: 200px;
+    height: 56px;
   }
 }
