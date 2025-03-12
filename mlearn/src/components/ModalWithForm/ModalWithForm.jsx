@@ -1,7 +1,6 @@
 import "./ModalWithForm.css";
 import Modal from "../Modal/Modal";
-import { useContext } from "react";
-import { ModalContext } from "../../contexts/ModalContext";
+import { useModalStore } from "../../Store/UseModalStore";
 
 function ModalWithForm({
   children,
@@ -12,7 +11,7 @@ function ModalWithForm({
   redirectText,
   clickHandler,
 }) {
-  const { closeActiveModal } = useContext(ModalContext);
+  const { closeActiveModal } = useModalStore();
   return (
     <Modal name="form" onClose={closeActiveModal} isOpen={isOpen}>
       <div

@@ -2,7 +2,7 @@ import "./Tasks.css";
 import Header from "../Header/Header";
 import { getTaskTypes } from "../../utils/openMlApi";
 import { useEffect, useState } from "react";
-import useTaskStore from "../../Store/Store";
+import useTaskStore from "../../Store/UseTaskStore";
 import TaskList from "../TaskList/TaskList";
 import Preloader from "../Preloader/Preloader";
 

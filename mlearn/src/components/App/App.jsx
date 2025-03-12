@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useModalStore } from "../../Store/UseModalStore.js";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Main from "../Main/Main";
@@ -10,10 +11,8 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import Tasks from "../Tasks/Tasks.jsx";
 
-import { ModalContext } from "../../contexts/ModalContext.jsx";
-
 const App = () => {
-  const { activeModal } = useContext(ModalContext);
+  const { activeModal } = useModalStore();
 
   return (
     <div className="page">

@@ -1,10 +1,10 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/mlearnNoBack.svg";
-import { useTextColor } from "../../contexts/TextColorContext";
+import { useTextColorStore } from "../../Store/UseTextColorStore";
 import NavBar from "../NavBar/NavBar";
 function Header() {
-  const textColor = useTextColor();
+  const { textColor } = useTextColorStore();
   return (
     <header className="header" style={{ color: textColor }}>
       <div className="header__content">

@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useContext } from "react";
-import { ModalContext } from "../../contexts/ModalContext";
+import { useModalStore } from "../../Store/UseModalStore";
 
 function LoginModal({ isOpen }) {
-  const {} = useContext(ModalContext);
-  const { handleRegisterClick } = useContext(ModalContext);
+  const { handleRegisterClick } = useModalStore();
 
   const [data, setData] = useState({
     email: "",

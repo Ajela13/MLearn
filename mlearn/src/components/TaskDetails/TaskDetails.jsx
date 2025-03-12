@@ -1,6 +1,6 @@
 import "./taskDetails.css";
 import { useEffect, useState } from "react";
-import useTaskStore from "../../Store/Store";
+import useTaskStore from "../../Store/UseTaskStore";
 import { getTaskById } from "../../utils/openMlApi";
 import Preloader from "../Preloader/Preloader";
 

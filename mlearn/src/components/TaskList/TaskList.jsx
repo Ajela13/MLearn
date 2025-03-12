@@ -1,13 +1,13 @@
 import "./TaskList.css";
 import { useEffect } from "react";
-import useTaskStore from "../../Store/Store";
+import useTaskStore from "../../Store/UseTaskStore";
 import { getTasksByType } from "../../utils/openMlApi";
 import TaskCard from "../TaskCard/TaskCard";
 
 function TaskList() {
   const { selectedTaskType, tasks } = useTaskStore();
   useEffect(() => {
-    if (!selectedTaskType) return;
+    if (!selectedTaskType) return; 
     getTasksByType(selectedTaskType.id);
   }, [selectedTaskType]);
 

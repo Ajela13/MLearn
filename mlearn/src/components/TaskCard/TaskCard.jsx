@@ -2,7 +2,7 @@ import "./taskCard.css";
 import { useEffect } from "react";
 import { TaskDetails } from "../TaskDetails/TaskDetails";
 import { getTaskById } from "../../utils/openMlApi";
-import useTaskStore from "../../Store/Store";
+import useTaskStore from "../../Store/UseTaskStore";
 
 function TaskCard({ task }) {
   const { taskDetails } = useTaskStore();

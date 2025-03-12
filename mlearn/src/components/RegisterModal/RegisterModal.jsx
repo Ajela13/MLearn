@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 // import AuthHandler from "../../handlers/AuthHandler";
-import { ModalContext } from "../../contexts/ModalContext";
+import { useModalStore } from "../../Store/UseModalStore";
 
 function RegisterModal({ isOpen }) {
   //   const { handleRegistration } = AuthHandler();
-  const { handleLoginClick } = useContext(ModalContext);
+  const { handleLoginClick } = useModalStore();
   const [data, setData] = useState({
     name: "",
     email: "",
