@@ -8,7 +8,7 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.836);
-  margin: auto;
+  margin: 0 auto;
 }
 
 .taskDetails__title {
@@ -81,4 +81,31 @@
 
 .taskDetails__link:hover {
   background-color: rgb(255, 150, 80); /* Nuevo color en hover */
+}
+
+@media (max-width: 1200px) {
+  .taskDetails__title {
+    font-size: 20px;
+  }
+
+  .taskDetails__link {
+    font-size: 14px;
+  }
+  .taskDetails__detail {
+    font-size: 14px;
+  }
+
+  .taskDetails__property {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .taskDetails__links {
+    flex-direction: column;
+  }
+
+  .taskDetails__link {
+    margin: 0 0 5px 0;
+  }
 }

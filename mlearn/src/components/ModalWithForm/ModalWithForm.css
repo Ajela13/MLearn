@@ -100,3 +100,29 @@
 .modal__buttonredirect {
   text-decoration: none;
 }
+
+@media screen and (max-width: 1200px) {
+  .modal--wide {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .modal__content {
+    width: 250px;
+  }
+
+  .modal__close {
+    width: 30px;
+    height: 30px;
+    bottom: calc(100% + 5px);
+    left: calc(100% + 5px);
+  }
+
+  .modal__submit {
+    width: 258px;
+  }
+  .modal__title {
+    font-size: 24px;
+  }
+}

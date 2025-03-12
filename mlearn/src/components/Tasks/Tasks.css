@@ -24,3 +24,16 @@
   margin: 3px;
   cursor: pointer;
 }
+
+@media (max-width: 900px) {
+  .tasks__title {
+    font-size: 24px;
+  }
+  .tasks__description {
+    font-size: 18px;
+  }
+  .tasks__button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

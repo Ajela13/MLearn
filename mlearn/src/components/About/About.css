@@ -38,3 +38,26 @@
   line-height: 1.2;
   margin-top: 24px;
 }
+
+@media (max-width: 830px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about__content {
+    margin: 20px;
+  }
+
+  .about__image {
+    width: 284px;
+    height: 284px;
+  }
+
+  .about__title {
+    font-size: 30px;
+  }
+  .about__description {
+    font-size: 16px;
+  }
+}

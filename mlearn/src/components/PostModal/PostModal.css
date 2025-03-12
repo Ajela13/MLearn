@@ -1,4 +1,5 @@
 .modal__preview-content {
+  font-family: "NotoSans", sans-serif;
   background-color: #ffffff;
   position: relative;
   border-radius: 16px;
@@ -52,7 +53,6 @@
   align-self: flex-start;
   margin-top: 20px;
   margin-right: 32px;
-  font-family: Cabinet;
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
@@ -66,4 +66,26 @@
 
 .item__delete-button_visible {
   visibility: visible;
+}
+
+@media screen and (max-width: 621px) {
+  .modal__preview-content {
+    width: 282px;
+    font-size: 12px;
+  }
+
+  .modal__close-preview {
+    width: 30px;
+    height: 30px;
+    bottom: calc(100% + 5px);
+    left: calc(100% + 5px);
+  }
+
+  .modal__preview-title {
+    font-size: 24px;
+  }
+
+  .modal__delete {
+    font-size: 14px;
+  }
 }

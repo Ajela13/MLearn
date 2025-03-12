@@ -34,7 +34,7 @@
   margin: 0;
 }
 
-.card__name {
+.card__title {
   font-size: 26px;
   font-weight: 400;
   line-height: 1.2;
@@ -92,4 +92,23 @@
   height: 30px;
   display: flex;
   align-self: center;
+}
+
+@media (max-width: 650px) {
+  .card {
+    width: 250px;
+    height: 280px;
+  }
+
+  .card__date {
+    font-size: 16px;
+  }
+
+  .card__author {
+    font-size: 14px;
+  }
+
+  .card__title {
+    font-size: 24px;
+  }
 }
