@@ -1,13 +1,12 @@
 import Modal from "../Modal/Modal";
 import "./PostModal.css";
-import { useContext } from "react";
-import { ModalContext } from "../../contexts/ModalContext";
-import { usePost } from "../../contexts/PostContext";
+import { useModalStore } from "../../Store/UseModalStore";
+import { usePostStore } from "../../Store/UsePostStore";
 import SafeHtmlContent from "../SafeHtmlContent/SafeHtmlContent";
 function PostModal({ isOpen }) {
-  const { postData } = usePost();
+  const { postData } = usePostStore();
   const { closeActiveModal, handleConfirmationDeleteClick, selectedCard } =
-    useContext(ModalContext);
+    useModalStore();
   const card = selectedCard;
   return (
     <Modal name="preview" onClose={closeActiveModal} isOpen={isOpen}>
