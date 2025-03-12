@@ -1,5 +1,5 @@
 const baseUrl = "https://www.openml.org/api/v1/json";
-import useTaskStore from "../Store/Store";
+import useTaskStore from "../Store/UseTaskStore";
 
 export async function getTaskTypes() {
   try {
