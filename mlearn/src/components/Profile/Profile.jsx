@@ -1,13 +1,12 @@
 import "./Profile.css";
 import Header from "../Header/Header";
-import PostCard from "../PostCard/PostCard";
+import PostList from "../PostList/PostList";
 
 function Profile() {
   return (
     <section className="profile">
       <div className="profile__content">
         <Header />
-
         <h1 className="profile__title">Username you have 5 saved articles</h1>
         <h2 className="profile__subtitle">
           by keywords: supervise, unsupervise
@@ -17,9 +16,7 @@ function Profile() {
           <button className="profile__btn">Created articles</button>
         </div>
         <div className="profile__results">
-          <ul className="profile__list">
-            <PostCard />
-          </ul>
+          <PostList />
         </div>
       </div>
     </section>
