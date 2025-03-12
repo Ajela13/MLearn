@@ -1,34 +1,30 @@
 import "./AddPostModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import Editor from "../Editor/Editor";
-import { useEffect } from "react";
-import { usePost } from "../../contexts/PostContext";
+import { usePostStore } from "../../Store/UsePostStore";
+import { useModalStore } from "../../Store/UseModalStore";
 
 function AddPostModal({ isOpen }) {
-  const { postData, setPostData } = usePost();
-
+  const { currentPost, setCurrentPost, setPostData } = usePostStore();
+  const { closeActiveModal } = useModalStore();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Formulario enviado:", postData);
-    // setPostData({ title: "", post: "<h2>Start here...</h2>" });
+
+    const newPost = {
+      ...currentPost,
+      id: Date.now(),
+    };
+
+    setPostData(newPost);
+
+    setCurrentPost({ title: "", post: "<h2>Start here...</h2>" });
+    closeActiveModal();
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setPostData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setCurrentPost({ [name]: value });
   };
-
-  useEffect(() => {
-    if (isOpen) {
-      console.log(postData);
-      setPostData((prevData) => ({
-        ...prevData,
-      }));
-    }
-  }, [isOpen, setPostData]);
 
   return (
     <ModalWithForm
@@ -42,7 +38,7 @@ function AddPostModal({ isOpen }) {
         <input
           id="title"
           type="text"
-          value={postData.title}
+          value={currentPost.title}
           className="modal__input"
           placeholder="Title"
           onChange={handleChange}
