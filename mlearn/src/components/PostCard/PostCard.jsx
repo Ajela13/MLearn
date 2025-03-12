@@ -1,14 +1,13 @@
 import "./PostCard.css";
-import photo from "../../assets/background.png";
-import { ModalContext } from "../../contexts/ModalContext";
-import { useContext } from "react";
-import { usePost } from "../../contexts/PostContext";
+import { useModalStore } from "../../Store/UseModalStore";
 import SafeHtmlContent from "../SafeHtmlContent/SafeHtmlContent";
 
-function PostCard() {
-  const { handleCardClick } = useContext(ModalContext);
-  const { postData } = usePost();
-  console.log(postData.post);
+function PostCard({ post }) {
+  if (!post || !post.title || !post.post) {
+    return null; // No renderiza nada si el post es inválido
+  }
+
+  const { handleCardClick } = useModalStore();
 
   const onCardClick = () => {
     handleCardClick();
@@ -17,9 +16,9 @@ function PostCard() {
     <li className="card" onClick={onCardClick}>
       <div className="card__header">
         <p className="card__date">Card Date</p>
-        <h2 className="card__name">{postData.title}</h2>
+        <h2 className="card__title">{post.title}</h2>
         <div className="card__description">
-          <SafeHtmlContent html={postData.post} />
+          <SafeHtmlContent html={post.post} />
         </div>
         <button className="card__save-btn"></button>
       </div>
