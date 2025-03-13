@@ -68,6 +68,10 @@
   cursor: pointer;
 }
 
+.profile__btn-active {
+  background-color: rgb(207, 169, 42);
+}
+
 @media (max-width: 650px) {
   .profile__title {
     font-size: 30px;
