@@ -3,7 +3,7 @@ import PostCard from "../PostCard/PostCard";
 import { usePostStore } from "../../Store/UsePostStore";
 
 function PostList({ posts }) {
-  const { activetab } = usePostStore();
+  const { activeTab } = usePostStore();
   return (
     <div className="postList">
       {Array.isArray(posts) && posts.length > 0 ? (
@@ -14,9 +14,11 @@ function PostList({ posts }) {
         </div>
       ) : (
         <p className="postList__empty">
-          {activetab == "created"
-            ? "Looks like there's nothing here yet. Be the first to add a post!"
-            : "Looks like there's nothing saved yet."}
+          {activeTab === "saved"
+            ? "Looks like there's nothing saved yet."
+            : activeTab === "created"
+            ? "Looks like there's no post created by you!"
+            : "Looks like there's nothing here yet. Be the first to add a post!"}
         </p>
       )}
     </div>
