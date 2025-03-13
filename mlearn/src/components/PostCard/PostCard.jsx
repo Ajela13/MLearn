@@ -2,8 +2,10 @@ import "./PostCard.css";
 import { useModalStore } from "../../Store/UseModalStore";
 import { usePostStore } from "../../Store/UsePostStore";
 import SafeHtmlContent from "../SafeHtmlContent/SafeHtmlContent";
+import { useAuthStore } from "../../Store/UseAuthStore";
 
 function PostCard({ post }) {
+  const { isLoggedIn } = useAuthStore();
   if (!post || !post.title || !post.post) {
     return null;
   }
@@ -20,6 +22,7 @@ function PostCard({ post }) {
       <button
         className={`card__save-btn ${isSaved ? "saved" : ""}`}
         onClick={() => toggleSavePost(post.id, userId)}
+        hidden={!isLoggedIn}
       ></button>
       <div className="card__header" onClick={onCardClick}>
         <p className="card__date">{post.date}</p>
