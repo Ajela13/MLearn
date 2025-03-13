@@ -5,14 +5,14 @@ import SafeHtmlContent from "../SafeHtmlContent/SafeHtmlContent";
 import { useAuthStore } from "../../Store/UseAuthStore";
 
 function PostCard({ post }) {
-  const { isLoggedIn } = useAuthStore();
+  const { isLoggedIn, currentUser } = useAuthStore();
   if (!post || !post.title || !post.post) {
     return null;
   }
 
   const { handleCardClick } = useModalStore();
-  const { toggleSavePost, userId } = usePostStore();
-  const isSaved = post.savedBy.includes(userId);
+  const { toggleSavePost } = usePostStore();
+  const isSaved = post.savedBy.includes(currentUser.id);
 
   const onCardClick = () => {
     handleCardClick();
@@ -20,8 +20,8 @@ function PostCard({ post }) {
   return (
     <li className="card">
       <button
-        className={`card__save-btn ${isSaved ? "saved" : ""}`}
-        onClick={() => toggleSavePost(post.id, userId)}
+        className={`card__save-btn ${isSaved ? "card__save-btn-active" : ""}`}
+        onClick={() => toggleSavePost(post.id, currentUser.id)}
         hidden={!isLoggedIn}
       ></button>
       <div className="card__header" onClick={onCardClick}>
