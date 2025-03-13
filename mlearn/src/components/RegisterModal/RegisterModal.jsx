@@ -21,14 +21,14 @@ function RegisterModal({ isOpen }) {
   };
   useEffect(() => {
     if (isOpen) {
-      setData({ name: "", email: "", password: "" });
+      setData({ name: "", email: "", password: "", id: crypto.randomUUID() });
     }
   }, [isOpen]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await register(data.name, data.email, data.password);
+      await register(data.name, data.email, data.password, data.id);
       closeActiveModal();
     } catch (error) {
       console.error("Register error:", error);
