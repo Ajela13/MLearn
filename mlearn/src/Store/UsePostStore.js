@@ -11,7 +11,7 @@ export const usePostStore = create((set) => ({
     date: "",
   },
   visibleCount: 3,
-  activeTab: "created",
+  activeTab: "",
 
   setCurrentPost: (updatedFields) =>
     set((state) => ({
@@ -21,7 +21,6 @@ export const usePostStore = create((set) => ({
   setPostData: (newPost) =>
     set((state) => {
       if (Array.isArray(newPost)) {
-        // Maneja la carga inicial de posts
         return { postData: newPost };
       }
 
