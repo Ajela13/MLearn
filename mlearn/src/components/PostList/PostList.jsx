@@ -14,11 +14,13 @@ function PostList({ posts }) {
         </div>
       ) : (
         <p className="postList__empty">
-          {activeTab === "saved"
+          {location.pathname === "/"
+            ? "Looks like there's nothing here yet. Be the first to add a post!"
+            : activeTab === "saved"
             ? "Looks like there's nothing saved yet."
             : activeTab === "created"
             ? "Looks like there's no post created by you!"
-            : "Looks like there's nothing here yet. Be the first to add a post!"}
+            : "No posts found"}
         </p>
       )}
     </div>
