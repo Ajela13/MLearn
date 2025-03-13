@@ -12,6 +12,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import Tasks from "../Tasks/Tasks.jsx";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
+import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal.jsx";
 import { getPosts } from "../../utils/api.js";
 import { usePostStore } from "../../Store/UsePostStore.js";
 import { useAuthStore } from "../../Store/UseAuthStore.js";
@@ -45,6 +46,7 @@ const App = () => {
       <PostModal isOpen={activeModal == "preview"} />
       <LoginModal isOpen={activeModal == "Login"} />
       <RegisterModal isOpen={activeModal == "register"} />
+      <DeleteConfirmationModal isOpen={activeModal == "confirmation"} />
     </div>
   );
 };
