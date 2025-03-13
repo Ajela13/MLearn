@@ -78,6 +78,10 @@
   font-size: 18px;
 }
 
+.modal__submit:hover {
+  background-color: #000000a9;
+}
+
 .modal__submit-buttons {
   display: flex;
   flex-direction: column;
