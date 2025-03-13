@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.card:hover {
+  box-shadow: 3px 3px 10px rgba(216, 169, 13, 0.603);
+}
+
 .card__image {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -82,16 +86,11 @@
   height: 30px;
   display: flex;
   align-self: center;
+  cursor: pointer;
 }
 
 .card__save-btn-active {
-  margin-left: 10px;
-  border: transparent;
-  background: url("../../assets/likeBtnActive.svg") no-repeat center;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-self: center;
+  background: url("../../assets/save_active.svg") no-repeat center;
 }
 
 @media (max-width: 650px) {
