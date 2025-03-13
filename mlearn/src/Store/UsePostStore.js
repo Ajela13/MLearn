@@ -20,13 +20,27 @@ export const usePostStore = create((set) => ({
 
   setPostData: (newPost) =>
     set((state) => {
-      if (!newPost.title.trim() || !newPost.post.trim()) {
-        console.error("It must have a title and content");
+      if (Array.isArray(newPost)) {
+        // Maneja la carga inicial de posts
+        return { postData: newPost };
+      }
+
+      if (!newPost || typeof newPost !== "object") {
+        console.error("Invalid post data:", newPost);
+        return state;
+      }
+
+      const { title, post } = newPost;
+      if (!title?.trim() || !post?.trim()) {
+        console.error(
+          "Invalid post: It must have a title and content",
+          newPost
+        );
         return state;
       }
 
       return {
-        postData: [...state.postData, newPost], // Agrega el nuevo post
+        postData: [...state.postData, newPost],
       };
     }),
 
