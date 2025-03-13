@@ -2,7 +2,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/mlearnNoBack.svg";
 import { useTextColorStore } from "../../Store/UseTextColorStore";
-import NavBar from "../NavBar/NavBar";
+import Navigation from "../Navigation/Navigation";
 function Header() {
   const { textColor } = useTextColorStore();
   return (
@@ -14,7 +14,7 @@ function Header() {
             <p className="header__title">MLearn</p>
           </div>
         </Link>
-        <NavBar />
+        <Navigation />
       </div>
     </header>
   );

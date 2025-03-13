@@ -18,7 +18,6 @@ function Profile() {
       ? postData.filter((post) => post.savedBy?.includes(userId))
       : postData.filter((post) => post.createdBy === userId);
   console.log(filteredPosts);
-  console.log(visibleCount, filteredPosts.length);
   return (
     <section className="profile">
       <div className="profile__content">
