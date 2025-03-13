@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-// import AuthHandler from "../../handlers/AuthHandler";
+import { useAuthStore } from "../../Store/UseAuthStore";
 import { useModalStore } from "../../Store/UseModalStore";
 
 function RegisterModal({ isOpen }) {
-  //   const { handleRegistration } = AuthHandler();
-  const { handleLoginClick } = useModalStore();
+  const { register } = useAuthStore();
+  const { handleLoginClick, closeActiveModal } = useModalStore();
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -25,9 +25,15 @@ function RegisterModal({ isOpen }) {
     }
   }, [isOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    //     handleRegistration(data);
+    try {
+      await register(data.name, data.email, data.password);
+      closeActiveModal();
+    } catch (error) {
+      console.error("Register error:", error);
+      alert("Try register again.");
+    }
   };
 
   return (
@@ -49,6 +55,7 @@ function RegisterModal({ isOpen }) {
           placeholder="Email"
           onChange={handleChange}
           name="email"
+          required
         />
       </label>
 
@@ -62,6 +69,7 @@ function RegisterModal({ isOpen }) {
           placeholder="Password"
           onChange={handleChange}
           name="password"
+          required
         />
       </label>
 
@@ -75,6 +83,7 @@ function RegisterModal({ isOpen }) {
           placeholder="Name"
           onChange={handleChange}
           name="name"
+          required
         />
       </label>
     </ModalWithForm>
