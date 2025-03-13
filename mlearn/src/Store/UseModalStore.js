@@ -10,7 +10,7 @@ export const useModalStore = create((set) => ({
   handleLoginClick: () => set({ activeModal: "Login" }),
   handleRegisterClick: () => set({ activeModal: "register" }),
   handleUpdateProfileClick: () => set({ activeModal: "update profile" }),
-  handleCardClick: (card) =>
-    set({ activeModal: "preview", selectedCard: card }),
+  handleCardClick: (post) =>
+    set({ activeModal: "preview", selectedCard: post }),
   handleConfirmationDeleteClick: () => set({ activeModal: "confirmation" }),
 }));
