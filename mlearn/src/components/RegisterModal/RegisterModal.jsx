@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 // import AuthHandler from "../../handlers/AuthHandler";
 import { useModalStore } from "../../Store/UseModalStore";
@@ -10,7 +10,6 @@ function RegisterModal({ isOpen }) {
     name: "",
     email: "",
     password: "",
-    avatar: "",
   });
 
   const handleChange = (e) => {
@@ -22,7 +21,7 @@ function RegisterModal({ isOpen }) {
   };
   useEffect(() => {
     if (isOpen) {
-      setData({ name: "", email: "", password: "", avatar: "" });
+      setData({ name: "", email: "", password: "" });
     }
   }, [isOpen]);
 
@@ -76,19 +75,6 @@ function RegisterModal({ isOpen }) {
           placeholder="Name"
           onChange={handleChange}
           name="name"
-        />
-      </label>
-
-      <label htmlFor="signUp-avatar" className="modal__label">
-        Avatar URL*
-        <input
-          type="url"
-          className="modal__input"
-          id="signUp-avatar"
-          value={data.avatar}
-          placeholder="Avatar URL"
-          onChange={handleChange}
-          name="avatar"
         />
       </label>
     </ModalWithForm>
