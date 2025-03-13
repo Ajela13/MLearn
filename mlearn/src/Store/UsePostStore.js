@@ -2,6 +2,7 @@ import { create } from "zustand";
 
 export const usePostStore = create((set) => ({
   postData: [],
+  searchQuery: "",
   currentPost: {
     id: null,
     title: "",
@@ -11,7 +12,7 @@ export const usePostStore = create((set) => ({
     date: "",
   },
   visibleCount: 3,
-  activeTab: "",
+  activeTab: "saved",
 
   setCurrentPost: (updatedFields) =>
     set((state) => ({
@@ -42,6 +43,8 @@ export const usePostStore = create((set) => ({
         postData: [...state.postData, newPost],
       };
     }),
+
+  setSearchQuery: (query) => set({ searchQuery: query }),
 
   increaseVisibleCount: () =>
     set((state) => ({ visibleCount: state.visibleCount + 3 })),

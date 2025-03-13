@@ -6,9 +6,13 @@ import "./Main.css";
 import { usePostStore } from "../../Store/UsePostStore";
 
 function Main() {
-  const { postData, visibleCount, increaseVisibleCount } = usePostStore();
+  const { postData, visibleCount, increaseVisibleCount, searchQuery } =
+    usePostStore();
 
-  const visiblePosts = postData.slice(0, visibleCount);
+  const filteredPosts = postData.filter((post) =>
+    post.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const visiblePosts = filteredPosts.slice(0, visibleCount);
 
   return (
     <main className="main">
@@ -23,7 +27,7 @@ function Main() {
         <div className="main__results">
           <h2 className="main__results-title">Search results</h2>
           <PostList posts={visiblePosts} />
-          {postData.length > 3 && visibleCount < postData.length && (
+          {filteredPosts.length > 3 && visibleCount < filteredPosts.length && (
             <button className="main__show-btn" onClick={increaseVisibleCount}>
               Show more
             </button>
