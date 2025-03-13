@@ -1,27 +1,35 @@
 import Modal from "../Modal/Modal";
 import "./PostModal.css";
 import { useModalStore } from "../../Store/UseModalStore";
-import { usePostStore } from "../../Store/UsePostStore";
 import SafeHtmlContent from "../SafeHtmlContent/SafeHtmlContent";
+import { useAuthStore } from "../../Store/UseAuthStore";
+
 function PostModal({ isOpen }) {
-  const { postData } = usePostStore();
+  const { currentUser } = useAuthStore();
   const { closeActiveModal, handleConfirmationDeleteClick, selectedCard } =
     useModalStore();
-  const card = selectedCard;
+  const post = selectedCard;
+  console.log(post);
+
   return (
     <Modal name="preview" onClose={closeActiveModal} isOpen={isOpen}>
       <div className="modal__preview-content">
-        <p className="modal__preview-date">Post date</p>
-        <h2 className="modal__preview-title"> {postData.title}</h2>
-        <SafeHtmlContent html={postData.post} />
+        <p className="modal__preview-date">{post.date}</p>
+        <h2 className="modal__preview-title"> {post.title}</h2>
+        <SafeHtmlContent html={post.post} />
         <button
           onClick={closeActiveModal}
           type="button"
           className="modal__close-preview"
         ></button>
         <div className="modal__footer">
-          <p className="modal__author">Author</p>
-          <button className="modal__delete" type="button">
+          <p className="modal__author">{post.createdBy}</p>
+          <button
+            className="modal__delete"
+            type="button"
+            onClick={handleConfirmationDeleteClick}
+            hidden={!(currentUser.id == selectedCard.createdBy)}
+          >
             Delete item
           </button>{" "}
         </div>
