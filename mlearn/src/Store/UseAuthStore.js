@@ -10,11 +10,14 @@ export const useAuthStore = create((set) => ({
   },
   isLoggedIn: false,
 
-  register: async (name, email, password) => {
+  register: async (name, email, password, id) => {
     try {
       const response = await authorize(email, password);
       const userData = await checkToken(response.token);
-      set({ currentUser: { ...userData.data, name }, isLoggedIn: true });
+      set({
+        currentUser: { ...userData.data, name, password, email, id },
+        isLoggedIn: true,
+      });
     } catch (error) {
       console.error("Registration failed", error);
     }
@@ -30,5 +33,9 @@ export const useAuthStore = create((set) => ({
     }
   },
 
-  logout: () => set({ currentUser: null, isLoggedIn: false }),
+  logout: () =>
+    set({
+      currentUser: { id: null, name: "", password: "", email: "" },
+      isLoggedIn: false,
+    }),
 }));
