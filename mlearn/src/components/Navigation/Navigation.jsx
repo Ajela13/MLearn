@@ -9,9 +9,8 @@ import { useAuthStore } from "../../Store/UseAuthStore";
 function Navigation() {
   const { textColor } = useTextColorStore();
   const { handleAddClick, handleLoginClick } = useModalStore();
-  const { isLoggedIn } = useAuthStore();
+  const { isLoggedIn, logout } = useAuthStore();
   const [menuOpen, setMenuOpen] = useState(false);
-
   if (isLoggedIn) {
     return (
       <nav className="navbar">
@@ -34,11 +33,14 @@ function Navigation() {
           </Link>
           <div className="navbar__auth">
             <button
-              className="navbar__SignIn"
+              className="navbar__Sign"
               style={{ borderColor: textColor }}
-              onClick={handleLoginClick}
+              onClick={() => {
+                logout();
+                setMenuOpen(false);
+              }}
             >
-              Sign in
+              Sign Out
             </button>
           </div>
         </ul>
@@ -60,7 +62,7 @@ function Navigation() {
         </Link>
         <div className="navbar__auth">
           <button
-            className="navbar__SignIn"
+            className="navbar__Sign"
             style={{ borderColor: textColor }}
             onClick={handleLoginClick}
           >
