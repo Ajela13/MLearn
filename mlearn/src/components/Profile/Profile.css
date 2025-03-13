@@ -17,13 +17,6 @@
   margin: 60px 0 30px 105px;
 }
 
-.profile__subtitle {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 30px 0 56px 105px;
-}
-
 .profile__btns {
   display: flex;
   flex-direction: row;

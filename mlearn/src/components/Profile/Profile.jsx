@@ -27,9 +27,6 @@ function Profile() {
           {currentUser.name} you have {filteredPosts.length} {activeTab}{" "}
           articles
         </h1>
-        <h2 className="profile__subtitle">
-          by keywords: supervise, unsupervise
-        </h2>
         <div className="profile__btns">
           <button
             className={`profile__btn ${
