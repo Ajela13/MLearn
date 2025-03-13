@@ -3,17 +3,19 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import Editor from "../Editor/Editor";
 import { usePostStore } from "../../Store/UsePostStore";
 import { useModalStore } from "../../Store/UseModalStore";
+import { useAuthStore } from "../../Store/UseAuthStore";
 
 function AddPostModal({ isOpen }) {
-  const { currentPost, setCurrentPost, setPostData, userId } = usePostStore();
+  const { currentPost, setCurrentPost, setPostData } = usePostStore();
   const { closeActiveModal } = useModalStore();
+  const { currentUser } = useAuthStore();
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newPost = {
       ...currentPost,
       id: Date.now(),
-      createdBy: userId,
+      createdBy: currentUser.id,
       date: new Date().toISOString().split("T")[0],
     };
 
