@@ -4,7 +4,7 @@ const fakeDatabase = [
     title: "Some news post",
     post: "<h2>Start here...</h2>",
     savedBy: ["fake-id"], // List of users who saved it
-    createdBy: ["fake-id"],
+    createdBy: ["kyjuthrgefsed"],
     date: "2025-03-11",
   },
   {
@@ -12,7 +12,7 @@ const fakeDatabase = [
     title: "Another news post",
     post: "<p>This is some content...</p>",
     savedBy: [],
-    createdBy: ["fake-id"],
+    createdBy: ["csdvfwd"],
     date: "2025-03-10",
   },
 ];
