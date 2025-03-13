@@ -5,7 +5,7 @@ import { usePostStore } from "../../Store/UsePostStore";
 import { useModalStore } from "../../Store/UseModalStore";
 
 function AddPostModal({ isOpen }) {
-  const { currentPost, setCurrentPost, setPostData } = usePostStore();
+  const { currentPost, setCurrentPost, setPostData, userId } = usePostStore();
   const { closeActiveModal } = useModalStore();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,11 +13,19 @@ function AddPostModal({ isOpen }) {
     const newPost = {
       ...currentPost,
       id: Date.now(),
+      createdBy: userId,
+      date: new Date().toISOString().split("T")[0],
     };
 
     setPostData(newPost);
 
-    setCurrentPost({ title: "", post: "<h2>Start here...</h2>" });
+    setCurrentPost({
+      title: "",
+      post: "<h2>Start here...</h2>",
+      savedBy: [],
+      createdBy: "",
+      date: "",
+    });
     closeActiveModal();
   };
 
