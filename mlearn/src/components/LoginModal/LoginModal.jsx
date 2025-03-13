@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useModalStore } from "../../Store/UseModalStore";
+import { useAuthStore } from "../../Store/UseAuthStore";
 
 function LoginModal({ isOpen }) {
-  const { handleRegisterClick } = useModalStore();
+  const { handleRegisterClick, closeActiveModal } = useModalStore();
+  const { login } = useAuthStore();
 
   const [data, setData] = useState({
     email: "",
@@ -24,9 +26,15 @@ function LoginModal({ isOpen }) {
     }
   }, [isOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // handleLoginSubmit(data);
+    try {
+      await login(data.email, data.password);
+      closeActiveModal();
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Try again");
+    }
   };
 
   return (
@@ -48,6 +56,7 @@ function LoginModal({ isOpen }) {
           placeholder="Email"
           onChange={handleChange}
           name="email"
+          required
         />
       </label>
 
@@ -61,6 +70,7 @@ function LoginModal({ isOpen }) {
           placeholder="Password"
           onChange={handleChange}
           name="password"
+          required
         />
       </label>
     </ModalWithForm>
