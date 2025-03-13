@@ -62,15 +62,8 @@ export const usePostStore = create((set) => ({
 
   setActiveTab: (tab) => set({ activeTab: tab }), // 🔹 Función para cambiar de pestaña
 
-  // removePost: (postId) =>
-  //   set((state) => ({
-  //     postData: state.postData.filter((post) => post.id !== postId),
-  //   })),
-
-  // updatePost: (updatedPost) =>
-  //   set((state) => ({
-  //     postData: state.postData.map((post) =>
-  //       post.id === updatedPost.id ? updatedPost : post
-  //     ),
-  //   })),
+  removePost: (postId) =>
+    set((state) => ({
+      postData: state.postData.filter((post) => post.id !== postId),
+    })),
 }));
