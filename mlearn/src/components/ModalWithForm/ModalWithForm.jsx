@@ -31,16 +31,15 @@ function ModalWithForm({
             <button type="submit" className="modal__submit">
               {buttonText}
             </button>
-
-            <button
-              hidden={!redirectText}
-              className="modal__redirect"
-              onClick={clickHandler}
-            >
-              {redirectText}
-            </button>
           </div>
         </form>
+        <button
+          hidden={!redirectText}
+          className="modal__redirect"
+          onClick={clickHandler}
+        >
+          {redirectText}
+        </button>
       </div>
     </Modal>
   );
