@@ -6,7 +6,13 @@ const useTaskStore = create((set) => ({
   tasks: {},
   taskDetails: {},
   datasets: [],
+  loading: false,
+  visibleCountTasks: 3,
 
+  increaseVisibleCountTasks: () =>
+    set((state) => ({ visibleCountTasks: state.visibleCountTasks + 3 })),
+
+  setLoading: (loading) => set({ loading }),
   setTaskTypes: (taskTypes) => set({ taskTypes }),
   setSelectedTaskType: (taskType) => set({ selectedTaskType: taskType }),
   setTasks: (tasks) => set({ tasks }),

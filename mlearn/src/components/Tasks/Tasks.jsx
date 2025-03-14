@@ -1,15 +1,14 @@
 import "./Tasks.css";
 import Header from "../Header/Header";
 import { getTaskTypes } from "../../utils/openMlApi";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import useTaskStore from "../../Store/UseTaskStore";
 import TaskList from "../TaskList/TaskList";
 import Preloader from "../Preloader/Preloader";
 
 const Tasks = () => {
-  const { taskTypes, setSelectedTaskType } = useTaskStore();
-  const [loading, setLoading] = useState(true);
-
+  const { taskTypes, setSelectedTaskType, loading, setLoading } =
+    useTaskStore();
   useEffect(() => {
     getTaskTypes().then(setLoading(false));
   }, []);
