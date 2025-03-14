@@ -7,7 +7,7 @@ import TaskCard from "../TaskCard/TaskCard";
 function TaskList() {
   const { selectedTaskType, tasks } = useTaskStore();
   useEffect(() => {
-    if (!selectedTaskType) return; 
+    if (!selectedTaskType) return;
     getTasksByType(selectedTaskType.id);
   }, [selectedTaskType]);
 
@@ -18,11 +18,11 @@ function TaskList() {
       </h2>
 
       {tasks.length > 0 ? (
-        <div className="taskList__list">
+        <ul className="taskList__list">
           {tasks.map((task) => (
             <TaskCard key={task.id} task={task} />
           ))}
-        </div>
+        </ul>
       ) : (
         <p>No tasks type selected yet.</p>
       )}

@@ -7,11 +7,11 @@ function PostList({ posts }) {
   return (
     <div className="postList">
       {Array.isArray(posts) && posts.length > 0 ? (
-        <div className="postList__list">
+        <ul className="postList__list">
           {posts.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
-        </div>
+        </ul>
       ) : (
         <p className="postList__empty">
           {location.pathname === "/"
