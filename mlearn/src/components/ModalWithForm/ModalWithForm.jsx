@@ -16,7 +16,7 @@ function ModalWithForm({
     <Modal name="form" onClose={closeActiveModal} isOpen={isOpen}>
       <div
         className={`modal__content ${
-          title === "New Post" ? "modal--wide" : ""
+          title === "New Post" ? "modal__content-wide" : ""
         }`}
       >
         <h2 className="modal__title">{title}</h2>
