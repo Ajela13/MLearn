@@ -8,9 +8,9 @@ import { useAuthStore } from "../../Store/UseAuthStore";
 
 function Navigation() {
   const { textColor } = useTextColorStore();
-  const { handleAddClick, handleLoginClick } = useModalStore();
+  const { handleAddClick, handleLoginClick, menuOpen, setMenuOpen } =
+    useModalStore();
   const { isLoggedIn, logout } = useAuthStore();
-  const [menuOpen, setMenuOpen] = useState(false);
   if (isLoggedIn) {
     return (
       <nav className="navbar">
@@ -26,10 +26,14 @@ function Navigation() {
             Add post
           </li>
           <Link to="/profile" className="navbar__link-no-style-link">
-            <li className="navbar__link">Profile</li>
+            <li className="navbar__link" onClick={() => setMenuOpen(!menuOpen)}>
+              Profile
+            </li>
           </Link>
           <Link to="/tasks" className="navbar__link-no-style-link">
-            <li className="navbar__link">Tasks</li>
+            <li className="navbar__link" onClick={() => setMenuOpen(!menuOpen)}>
+              Tasks
+            </li>
           </Link>
           <div className="navbar__auth">
             <button
@@ -58,7 +62,9 @@ function Navigation() {
 
       <ul className={`navbar__links ${menuOpen ? "navbar__open" : ""}`}>
         <Link to="/tasks" className="navbar__link-no-style-link">
-          <li className="navbar__link">Tasks</li>
+          <li className="navbar__link" onClick={() => setMenuOpen(!menuOpen)}>
+            Tasks
+          </li>
         </Link>
         <div className="navbar__auth">
           <button
