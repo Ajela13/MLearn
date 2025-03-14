@@ -8,12 +8,14 @@ function Profile() {
   const { currentUser } = useAuthStore();
   const {
     postData,
-    visibleCount,
-    increaseVisibleCount,
+    visibleCountSaved,
+    visibleCountCreated,
+    increaseVisibleCountSaved,
+    increaseVisibleCountCreated,
     activeTab,
     setActiveTab,
   } = usePostStore();
-
+  console.log(visibleCountCreated, visibleCountSaved);
   const filteredPosts =
     activeTab === "saved"
       ? postData.filter((post) => post.savedBy?.includes(currentUser.id))
@@ -46,15 +48,26 @@ function Profile() {
           </button>
         </div>
         <div className="profile__results">
-          <PostList posts={filteredPosts.slice(0, visibleCount)} />
-          {filteredPosts.length > 3 && visibleCount < filteredPosts.length && (
-            <button
-              className="profile__show-btn"
-              onClick={increaseVisibleCount}
-            >
-              Show more
-            </button>
-          )}
+          <PostList
+            posts={filteredPosts.slice(
+              0,
+              activeTab === "saved" ? visibleCountSaved : visibleCountCreated
+            )}
+          />
+          {filteredPosts.length > 3 &&
+            (activeTab === "saved" ? visibleCountSaved : visibleCountCreated) <
+              filteredPosts.length && (
+              <button
+                className="profile__show-btn"
+                onClick={
+                  activeTab == "saved"
+                    ? increaseVisibleCountSaved
+                    : increaseVisibleCountCreated
+                }
+              >
+                Show more
+              </button>
+            )}
         </div>
       </div>
     </section>
