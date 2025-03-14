@@ -2,7 +2,9 @@
 
 MLearn is an educational platform focused on teaching Machine Learning concepts through interactive posts. Users can create, edit, and explore posts containing text, code, and images. The platform also provides dataset downloads from OpenML and model visualizations.
 
-## Features
+## Pages
+[Deployed Site](https://ajela13.github.io/MLearn/)
+
 
 ### Main Page
 - **User Navbar:** Displays user profile information.
