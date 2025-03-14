@@ -12,7 +12,15 @@ export const usePostStore = create((set) => ({
     date: "",
   },
   visibleCount: 3,
+  visibleCountSaved: 3,
+  visibleCountCreated: 3,
   activeTab: "saved",
+
+  increaseVisibleCountSaved: () =>
+    set((state) => ({ visibleCountSaved: state.visibleCountSaved + 3 })),
+
+  increaseVisibleCountCreated: () =>
+    set((state) => ({ visibleCountCreated: state.visibleCountCreated + 3 })),
 
   setCurrentPost: (updatedFields) =>
     set((state) => ({
