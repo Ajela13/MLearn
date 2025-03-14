@@ -3,9 +3,16 @@
   background-color: #ffffff;
   position: relative;
   border-radius: 16px;
-  max-width: 496px;
+  max-width: 80vw;
   width: 100%;
   padding: 20px;
+}
+
+.modal__preview-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
 }
 
 .modal__preview-title {
@@ -14,6 +21,10 @@
   line-height: 1.2;
   color: #000000;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .modal__close-preview {
@@ -28,6 +39,7 @@
   top: -20px;
   right: -28px;
   cursor: pointer;
+  border: #ff4d00 2px;
 }
 
 .modal__image {
@@ -70,7 +82,7 @@
 
 @media screen and (max-width: 621px) {
   .modal__preview-content {
-    width: 282px;
+    width: 60vw;
     font-size: 12px;
   }
 
@@ -82,10 +94,14 @@
   }
 
   .modal__preview-title {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .modal__delete {
     font-size: 14px;
+  }
+
+  .modal__footer {
+    flex-direction: column;
   }
 }

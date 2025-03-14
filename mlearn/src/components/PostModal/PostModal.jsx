@@ -16,7 +16,9 @@ function PostModal({ isOpen }) {
       <div className="modal__preview-content">
         <p className="modal__preview-date">{post.date}</p>
         <h2 className="modal__preview-title"> {post.title}</h2>
-        <SafeHtmlContent html={post.post} />
+        <div className="modal__preview-scroll">
+          <SafeHtmlContent html={post.post} />
+        </div>
         <button
           onClick={closeActiveModal}
           type="button"
