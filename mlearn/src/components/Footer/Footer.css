@@ -19,3 +19,8 @@
   margin: 0;
   padding: 0;
 }
+
+.footer__link {
+  text-decoration: none;
+  color: #000;
+}
