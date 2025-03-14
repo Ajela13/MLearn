@@ -16,6 +16,7 @@ export async function getTaskTypes() {
     }
   } catch (error) {
     console.error("Error fetching data:", error);
+    alert("Something went wrong, try again");
   }
 }
 
@@ -39,6 +40,7 @@ export async function getTasksByType(tasktype) {
     }
   } catch (error) {
     console.error("Error fetching data:", error);
+    alert("Something went wrong, try again");
   }
 }
 
@@ -88,5 +90,6 @@ export const getTaskById = async (taskId) => {
     useTaskStore.getState().setTaskDetail(task);
   } catch (error) {
     console.error(`Error fetching task by ID (${taskId}):`, error);
+    alert("Something went wrong, try again");
   }
 };

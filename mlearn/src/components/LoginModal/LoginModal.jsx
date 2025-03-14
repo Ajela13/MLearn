@@ -33,7 +33,7 @@ function LoginModal({ isOpen }) {
       closeActiveModal();
     } catch (error) {
       console.error("Login error:", error);
-      alert("Try again");
+      alert("Something went wrong, try again");
     }
   };
 

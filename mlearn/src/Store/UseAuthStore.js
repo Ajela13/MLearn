@@ -20,6 +20,7 @@ export const useAuthStore = create((set) => ({
       });
     } catch (error) {
       console.error("Registration failed", error);
+      alert("Something went wrong, try again");
     }
   },
 
@@ -30,6 +31,7 @@ export const useAuthStore = create((set) => ({
       set({ currentUser: userData.data, isLoggedIn: true });
     } catch (error) {
       console.error("Login failed", error);
+      alert("Something went wrong, try again");
     }
   },
 
