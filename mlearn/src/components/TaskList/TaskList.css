@@ -9,6 +9,23 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
+}
+
+.taskList__show-btn {
+  width: 288px;
+  height: 60px;
+  border-radius: 80px;
+  background-color: #ffffff;
+  border: transparent;
+  margin: 60px auto 80px;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 @media (max-width: 1150px) {

@@ -5,7 +5,12 @@ import { getTasksByType } from "../../utils/openMlApi";
 import TaskCard from "../TaskCard/TaskCard";
 
 function TaskList() {
-  const { selectedTaskType, tasks } = useTaskStore();
+  const {
+    selectedTaskType,
+    tasks,
+    visibleCountTasks,
+    increaseVisibleCountTasks,
+  } = useTaskStore();
   useEffect(() => {
     if (!selectedTaskType) return;
     getTasksByType(selectedTaskType.id);
@@ -19,12 +24,20 @@ function TaskList() {
 
       {tasks.length > 0 ? (
         <ul className="taskList__list">
-          {tasks.map((task) => (
+          {tasks.slice(0, visibleCountTasks).map((task) => (
             <TaskCard key={task.id} task={task} />
           ))}
         </ul>
       ) : (
         <p>No tasks type selected yet.</p>
+      )}
+      {tasks.length > visibleCountTasks && (
+        <button
+          className="taskList__show-btn"
+          onClick={increaseVisibleCountTasks}
+        >
+          Show more
+        </button>
       )}
     </div>
   );
