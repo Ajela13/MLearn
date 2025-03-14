@@ -4,7 +4,7 @@ MLearn is an educational platform designed to help users explore and understand 
 
 ## Pages
 
-(Deployed Site)[https://ajela13.github.io/MLearn/]
+[Deployed Site](https://ajela13.github.io/MLearn/)
 
 ## Features
 
