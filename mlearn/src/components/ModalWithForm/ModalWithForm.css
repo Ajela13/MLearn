@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.modal__content-wide {
+.modal__content_size_wide {
   max-width: 1000px;
 }
 .modal__title {
@@ -107,7 +107,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .modal__content-wide {
+  .modal__content_size_wide {
     width: 700px;
   }
 }
