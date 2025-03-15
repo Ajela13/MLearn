@@ -25,16 +25,16 @@ function Navigation() {
           <li className="navbar__link" onClick={handleAddClick}>
             Add post
           </li>
-          <Link to="/profile" className="navbar__link-no-style-link">
-            <li className="navbar__link" onClick={() => setMenuOpen(!menuOpen)}>
+          <li className="navbar__link" onClick={() => setMenuOpen(!menuOpen)}>
+            <Link to="/profile" className="navbar__link-no-style-link">
               Profile
-            </li>
-          </Link>
-          <Link to="/tasks" className="navbar__link-no-style-link">
-            <li className="navbar__link" onClick={() => setMenuOpen(!menuOpen)}>
+            </Link>
+          </li>
+          <li className="navbar__link" onClick={() => setMenuOpen(!menuOpen)}>
+            <Link to="/tasks" className="navbar__link-no-style-link">
               Tasks
-            </li>
-          </Link>
+            </Link>
+          </li>
           <div className="navbar__auth">
             <button
               className="navbar__Sign"
