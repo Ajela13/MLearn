@@ -1,0 +1,39 @@
+.tasks {
+  font-family: "NotoSans", sans-serif;
+  color: aliceblue;
+}
+
+.tasks__content {
+  margin: 20px;
+}
+.tasks__title {
+  text-align: center;
+}
+
+.tasks__description {
+  font-size: 20px;
+  text-align: justify;
+}
+.tasks__button {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  margin: 3px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .tasks__title {
+    font-size: 24px;
+  }
+  .tasks__description {
+    font-size: 18px;
+  }
+  .tasks__button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

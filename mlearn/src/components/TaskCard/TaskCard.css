@@ -1,0 +1,10 @@
+.TaskCard {
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;
+  margin: 15px;
+  list-style: none;
+  width: 45%;
+  min-width: 330px;
+  max-width: 600px;
+}
